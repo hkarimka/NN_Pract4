@@ -25,19 +25,19 @@ print('MobileNet Predicted:', decode_predictions(preds_mobile, top=5)[0])
 from keras.applications.densenet import DenseNet121, preprocess_input, decode_predictions
 x = preprocess_input(x)
 model = DenseNet121(weights='imagenet')
-preds_mobile = model.predict(x)
-print('DenseNet121 Predicted:', decode_predictions(preds_mobile, top=5)[0])
+preds_densenet = model.predict(x)
+print('DenseNet121 Predicted:', decode_predictions(preds_densenet, top=5)[0])
 
 # Xception
 from keras.applications.xception import Xception, preprocess_input, decode_predictions
 x = preprocess_input(x)
 model = Xception(weights='imagenet')
-preds_mobile = model.predict(x)
-print('Xception Predicted:', decode_predictions(preds_mobile, top=5)[0])
+preds_xception = model.predict(x)
+print('Xception Predicted:', decode_predictions(preds_xception, top=5)[0])
 
 # InceptionResNetV2
 from keras.applications.inception_resnet_v2 import InceptionResNetV2, preprocess_input, decode_predictions
 x = preprocess_input(x)
 model = InceptionResNetV2(weights='imagenet')
-preds_mobile = model.predict(x)
-print('InceptionResNetV2 Predicted:', decode_predictions(preds_mobile, top=5)[0])
+preds_inception = model.predict(x)
+print('InceptionResNetV2 Predicted:', decode_predictions(preds_inception, top=5)[0])
